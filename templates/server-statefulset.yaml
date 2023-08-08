@@ -146,6 +146,13 @@ spec:
                   name: {{ .Values.global.acls.replicationToken.secretName | quote }}
                   key: {{ .Values.global.acls.replicationToken.secretKey | quote }}
             {{- end }}
+            {{- if (and .Values.server.enterpriseLicense.secretName .Values.server.enterpriseLicense.secretKey) }}
+            - name: CONSUL_LICENSE
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.server.enterpriseLicense.secretName }}
+                  key: {{ .Values.server.enterpriseLicense.secretKey }}
+            {{- end }}
             {{- include "consul.extraEnvironmentVars" .Values.server | nindent 12 }}
           command:
             - "/bin/sh"
