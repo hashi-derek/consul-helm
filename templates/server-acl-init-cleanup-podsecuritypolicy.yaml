@@ -2,7 +2,7 @@
 {{- if (or $serverEnabled .Values.externalServers.enabled) }}
 {{- if .Values.global.acls.manageSystemACLs }}
 {{- if .Values.global.enablePodSecurityPolicies }}
-apiVersion: policy/v1beta1
+apiVersion: policy/v1
 kind: PodSecurityPolicy
 metadata:
   name: {{ template "consul.fullname" . }}-server-acl-init-cleanup
