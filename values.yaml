@@ -52,7 +52,7 @@ global:
   # Docker image that is used for functionality such the catalog sync.
   # This can be overridden per component.
   # @default: hashicorp/consul-k8s:<latest version>
-  imageK8S: "thisisnotashwin/consul-k8s:0.24.0-k8s1.25"
+  imageK8S: "wilko1989/consul-k8s:01-18-2023-compat-1.13"
   #imageK8S: "hashicorp/consul-k8s:0.24.0"
 
   # The name of the datacenter that the agents should
