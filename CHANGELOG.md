@@ -1,4 +1,6 @@
 ## Unreleased
+* Use apiVersion: policy/v1 instead of apiVersion: policy/v1beta for kind: PodSecurityPolicy
+
 
 ## 0.30.0 (Feb 16, 2021)
 

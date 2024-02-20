@@ -1,7 +1,7 @@
 {{- if (and .Values.global.enablePodSecurityPolicies .Values.terminatingGateways.enabled) }}
 {{- $root := . }}
 {{- range .Values.terminatingGateways.gateways }}
-apiVersion: policy/v1beta1
+apiVersion: policy/v1
 kind: PodSecurityPolicy
 metadata:
   name:  {{ template "consul.fullname" $root }}-{{ .name }}

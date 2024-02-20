@@ -1,5 +1,5 @@
 {{- if (and .Values.global.enablePodSecurityPolicies (or (and (ne (.Values.connectInject.enabled | toString) "-") .Values.connectInject.enabled) (and (eq (.Values.connectInject.enabled | toString) "-") .Values.global.enabled))) }}
-apiVersion: policy/v1beta1
+apiVersion: policy/v1
 kind: PodSecurityPolicy
 metadata:
   name: {{ template "consul.fullname" . }}-connect-injector-webhook

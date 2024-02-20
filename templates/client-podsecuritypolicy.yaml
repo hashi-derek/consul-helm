@@ -1,5 +1,5 @@
 {{- if (and .Values.global.enablePodSecurityPolicies (or (and (ne (.Values.client.enabled | toString) "-") .Values.client.enabled) (and (eq (.Values.client.enabled | toString) "-") .Values.global.enabled))) }}
-apiVersion: policy/v1beta1
+apiVersion: policy/v1
 kind: PodSecurityPolicy
 metadata:
   name: {{ template "consul.fullname" . }}-client
